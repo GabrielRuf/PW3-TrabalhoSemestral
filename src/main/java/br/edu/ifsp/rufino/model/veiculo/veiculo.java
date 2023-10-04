@@ -14,6 +14,7 @@ public class veiculo {
     private String marca;
     private String modelo;
     private String ano;
+    private String cor;
     public veiculo (veiculoDTO dados){
         this.marca = dados.marca();
         this.modelo = dados.modelo();

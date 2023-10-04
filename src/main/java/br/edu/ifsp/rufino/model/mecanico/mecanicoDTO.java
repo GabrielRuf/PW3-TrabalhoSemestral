@@ -1,4 +1,11 @@
 package br.edu.ifsp.rufino.model.mecanico;
 
-public record mecanicoDTO(String nome, int experiencia) {
+import jakarta.validation.constraints.NotBlank;
+
+public record mecanicoDTO(
+        @NotBlank
+        String nome,
+
+        int experiencia
+) {
 }
