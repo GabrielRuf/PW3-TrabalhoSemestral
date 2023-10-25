@@ -15,4 +15,11 @@ public class mecanico {
         this.nome = dados.nome();
         this.experiencia = dados.experiencia();
     }
+
+    public void atualizar(mecanicoDTO mecanico) {
+        if (mecanico.nome() != null)
+            this.nome = mecanico.nome();
+        if (mecanico.experiencia() != this.experiencia)
+            this.experiencia = mecanico.experiencia();
+    }
 }

@@ -26,12 +26,25 @@ public class conserto {
     private mecanico MecanicoResponsavel;
     @Embedded
     private veiculo Veiculo;
+    private boolean ativo;
 
     public conserto(consertoDTO conserto){
+        this.id = conserto.id();
         this.dataentrada = conserto.dataentrada();
         this.datasaida = conserto.datasaida();
         this.MecanicoResponsavel = new mecanico(conserto.mecanico());
         this.Veiculo = new veiculo(conserto.veiculo());
+        this.ativo = true;
     }
 
+    public void atualizar(consertoEDIT dados) {
+        if (dados.datasaida() != null)
+            this.datasaida = dados.datasaida();
+        if (dados.mecanico() != null)
+            this.MecanicoResponsavel.atualizar(dados.mecanico());
+    }
+
+    public void inativate() {
+        ativo = false;
+    }
 }
